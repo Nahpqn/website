@@ -68,7 +68,7 @@ header{
   background: #191c1b;
   font-family: 'Lato', Arial;
 }
-header h1,p{
+header h1, header p{
   color: white;
   animation: 1s slideIn;
 }
@@ -120,6 +120,17 @@ button img{
   width: 300px;
 }
 .about{
-  height: 500px;
-  width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 200px;
+  flex-direction: column;
+  height: auto;
+  width: 40%;
+  font-family: 'Lato';
+}
+.about h2{
+  text-decoration: underline;
+  margin-bottom: 50px;
+}
+.about p{
+  color: black;
 }
