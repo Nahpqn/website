@@ -1,0 +1,282 @@
+var {Route, RouteHandler, DefaultRoute, Link} = ReactRouter;
+var TransitionGroup = React.addons.CSSTransitionGroup;
+
+class Layout extends React.Component {
+  render() {
+    var name = this.context.router.getCurrentPath();
+    return (
+      <div>
+        <nav>
+        <div>
+          <Link to="home">
+      	  Home
+          </Link>
+          <Link to="about">
+          About Me / Projects
+          </Link>
+          <Link to="portfolio">
+          Portfolio
+          </Link>
+  	    </div>
+  	    <div>
+          <a href="http://www.aeneus.tk/" target="_blank">Watch a movie?</a>
+  	   </div>
+      </nav>
+        <TransitionGroup component="div" transitionName="page-transition">
+          <RouteHandler />
+        </TransitionGroup>
+      </div>
+    );
+  }
+}
+
+Layout.contextTypes = {
+  router: React.PropTypes.func.isRequired
+};
+
+class Home extends React.Component {
+  render() {
+    return (
+      <header>
+        <img src="https://gdurl.com/2dAf"></img>
+        <h1>I'm <span>Ryan Witham</span>.</h1>
+        <p>Graphics / Web Developer</p>
+      </header>
+    );
+  }
+}
+
+class Portfolio extends React.Component {
+  render () {
+    return (
+      <div>
+        <div id="resumeContainer">
+          <div id="resumeColumn">
+            <div id="resumeBoxContain">
+              <div id="resumeBox2">
+                <p>Accomplishments</p>
+                  <li>SkillsUSA Nationals Gold</li>
+                  <li>Lorem Ipsum</li>
+                  <li>Lorem Ipsum</li>
+                  <li>Lorem Ipsum</li>
+                  <li>Lorem Ipsum</li>
+                  <li>Lorem Ipsum</li>
+              </div>
+              <div id="resumeBox2">
+                <p>Goals for the Future</p>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+                <li>Lorem Ipsum</li>
+              </div>
+            </div>
+            <div id="resumeBoxContain">
+              <div id="resumeBox2">
+                <p>Lucas ipsum dolor sit amet wookiee darth lando organa ventress mace fisto antilles mandalorians moff. Fett mace skywalker droid. Ponda gamorrean darth leia mace. Yoda jade darth organa jade padmé mothma organa greedo. Dagobah k-3po calamari skywalker antilles greedo jinn. Obi-wan kenobi solo moff sebulba mon. Solo luke bothan tusken raider antilles ahsoka darth dagobah. Jabba antilles utapau fett calamari ackbar antilles jinn. Droid darth moff amidala jango. Solo jinn ackbar grievous skywalker kit bespin hutt.</p>
+              </div>
+              <div id="resumeBox2">
+                <p>Lucas ipsum dolor sit amet wookiee darth lando organa ventress mace fisto antilles mandalorians moff. Fett mace skywalker droid. Ponda gamorrean darth leia mace. Yoda jade darth organa jade padmé mothma organa greedo. Dagobah k-3po calamari skywalker antilles greedo jinn. Obi-wan kenobi solo moff sebulba mon. Solo luke bothan tusken raider antilles ahsoka darth dagobah. Jabba antilles utapau fett calamari ackbar antilles jinn. Droid darth moff amidala jango. Solo jinn ackbar grievous skywalker kit bespin hutt.</p>
+              </div>
+            </div>
+            <div id="resumeBoxContain">
+              <div id="resumeBox2">
+                <p>Lucas ipsum dolor sit amet wookiee darth lando organa ventress mace fisto antilles mandalorians moff. Fett mace skywalker droid. Ponda gamorrean darth leia mace. Yoda jade darth organa jade padmé mothma organa greedo. Dagobah k-3po calamari skywalker antilles greedo jinn. Obi-wan kenobi solo moff sebulba mon. Solo luke bothan tusken raider antilles ahsoka darth dagobah. Jabba antilles utapau fett calamari ackbar antilles jinn. Droid darth moff amidala jango. Solo jinn ackbar grievous skywalker kit bespin hutt.</p>
+              </div>
+              <div id="resumeBox2">
+                <p>Lucas ipsum dolor sit amet wookiee darth lando organa ventress mace fisto antilles mandalorians moff. Fett mace skywalker droid. Ponda gamorrean darth leia mace. Yoda jade darth organa jade padmé mothma organa greedo. Dagobah k-3po calamari skywalker antilles greedo jinn. Obi-wan kenobi solo moff sebulba mon. Solo luke bothan tusken raider antilles ahsoka darth dagobah. Jabba antilles utapau fett calamari ackbar antilles jinn. Droid darth moff amidala jango. Solo jinn ackbar grievous skywalker kit bespin hutt.</p>
+              </div>
+            </div>
+          </div>
+          <div id="resumeBox">
+            <img src="http://via.placeholder.com/300x300" />
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+class About extends React.Component {
+  render() {
+    return (
+      <div>
+        <div id="aboutPage">
+          <div id="aboutContainer">
+            <img src="https://gdurl.com/2dAf" />
+            <div id="aboutBox">
+              <span>Hi! I'm Ryan Witham.</span>
+              <p>I am currently focusing on HTML/CSS, JavaScript, Python, React, C++, and other things as well. I reside in Vermont and am taking part in the Computer Animation and Web Design Program in Essex. This portfolio composes of some of my best work which is accessible through the many sections on my portfolio below.</p>
+          </div>
+        </div>
+      </div>
+      <div id="pushUp"></div>
+      <div id="cardPage">
+        <div id="cardContainer">
+          <Link to="port1">
+            <div id="card"><img src="https://gdurl.com/KlS1" /></div>
+          </Link>
+          <Link to="port2">
+            <div id="card"><img src="https://gdurl.com/Kr0U" /></div>
+          </Link>
+          <Link to="port3">
+            <div id="card"><img src="https://gdurl.com/3K-c" /></div>
+          </Link>
+        </div>
+        <div id="cardContainer">
+          <Link to="port4">
+            <div id="card"><img src="https://gdurl.com/20Xh" /></div>
+          </Link>
+          <div id="card"><img src="https://gdurl.com/y4e9p" /></div>
+          <div id="card"><img src="https://gdurl.com/08ji" /></div>
+        </div>
+      </div>
+     </div>
+    );
+  }
+}
+
+class Port1 extends React.Component {
+  render() {
+    return (
+      <div>
+        <div id="arrowContainer">
+          <Link to="port2">
+            <img src="http://gdurl.com/Vfd7" />
+          </Link>
+        </div>
+        <div id="portfolioTab">
+          <div id="portfolioContainer">
+            <img src="https://gdurl.com/qaCQ" />
+            <div id="imgText">
+              <h1>Mimmo's Pizza</h1>
+              <p>This website was for my SkillsUSA state competition.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+class Port2 extends React.Component {
+  render() {
+    return (
+      <div>
+        <div id="arrowContainer">
+          <Link to="port1">
+            <img src="http://gdurl.com/fWMl" />
+          </Link>
+          <Link to="port3">
+            <img src="http://gdurl.com/Vfd7" />
+          </Link>
+        </div>
+        <div id="portfolioTab">
+          <div id="portfolioContainer">
+            <img src="https://gdurl.com/jeuJ" />
+            <div id="imgText">
+              <h1>Snickers Bar | Midterm</h1>
+              <p>This is a Snickers candy bar I had to 3d model for my CAWD midterm.</p>
+              <p>Program used: Maya</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+class Port3 extends React.Component {
+  render() {
+    return (
+      <div>
+        <div id="arrowContainer">
+          <Link to="port2">
+            <img src="http://gdurl.com/fWMl" />
+          </Link>
+          <Link to="port4">
+            <img src="http://gdurl.com/Vfd7" />
+          </Link>
+        </div>
+        <div id="portfolioTab">
+          <div id="portfolioContainer">
+            <img src="https://gdurl.com/XoJnN" />
+            <div id="imgText">
+              <h1>Aeneus Cloud</h1>
+              <p>This is a torrent media server that I've been working on in my free time.</p>
+              <p>If you'd like to check it out: <a href="http://www.aeneus.tk/">Aeneus | tk</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+class Port4 extends React.Component {
+  render() {
+    return (
+      <div>
+        <div id="arrowContainer">
+          <Link to="port3">
+            <img src="http://gdurl.com/fWMl" />
+          </Link>
+          <Link to="port5">
+            <img src="http://gdurl.com/Vfd7" />
+          </Link>
+        </div>
+        <div id="portfolioTab">
+          <div id="portfolioContainer">
+            <img src="https://gdurl.com/xIXj" />
+            <div id="imgText">
+              <h1>Can Model | Midterm</h1>
+              <p>This is a model of a Coca Cola can I have to model for my CAWD midterm.</p>
+              <p>Program used: Maya</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+class Port5 extends React.Component {
+  render() {
+    return (
+      <div>
+        <div id="arrowContainer">
+          <Link to="port4">
+            <img src="http://gdurl.com/fWMl" />
+          </Link>
+        </div>
+        <div id="portfolioTab">
+          <div id="portfolioContainer">
+            <img src="https://gdurl.com/lRqw" />
+            <div id="imgText">
+              <h1>Can Model | Midterm</h1>
+              <p>This is a model of a Coca Cola can I have to model for my CAWD midterm.</p>
+              <p>Program used: Maya</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+var Routes = (
+  <Route name="app" path="/" handler={Layout}>
+    <Route name="home" handler={Home} />
+    <Route name="about" handler={About} />
+    <Route name="portfolio" handler={Portfolio} />
+    <Route name="port1" handler={Port1} />
+    <Route name="port2" handler={Port2} />
+    <Route name="port3" handler={Port3} />
+    <Route name="port4" handler={Port4} />
+    <Route name="port5" handler={Port5} />
+    <DefaultRoute handler={Home} />
+  </Route>
+);
+
+ReactRouter.run(Routes, (Handler) => React.render(<Handler /> , document.getElementById('app')));

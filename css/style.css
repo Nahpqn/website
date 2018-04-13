@@ -1,66 +1,118 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
-*{
+@import url("https://fonts.googleapis.com/css?family=Lato");
+* {
   margin: 0;
 }
-@keyframes slideIn{
-  from{
+
+body {
+  background: #191c1b;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-50px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideLeft {
+  from {
+    transform: translateX(50px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes imgSlideUp {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+@keyframes pSlideDown {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+@keyframes slideIn {
+  from {
     transform: translateX(-100px);
     opacity: 0;
   }
-  to{
+  to {
     transform: translateX(0);
     opacity: 1;
   }
 }
-@keyframes fadeIn{
-  from{
+@keyframes fadeIn {
+  from {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
   }
 }
-.center{
+.center {
   display: flex;
   justify-content: center;
 }
-#box{
+
+#arrowContainer {
+  display: flex;
+  justify-content: center;
+  background: #191c1b;
+}
+#arrowContainer img {
+  height: 50px;
+  width: 50px;
+}
+#arrowContainer img:hover {
+  transition: .5s transform;
+  transform: scale(1.1);
+}
+
+#box {
   background: #191c1b;
   height: 100px;
 }
+
 nav {
-	display: flex;
-	justify-content: space-between;
-}
-nav {
-	background: #191c1b;
-  width: 1200px;
-	padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  background: #191c1b;
+  padding: 1em;
 }
 nav a {
-		font-family: 'Lato';
-		color: white;
-		text-transform: uppercase;
-		text-decoration: none;
-		align-self: center;
-    transition: .25s background;
-	}
-nav div {
-		margin-left: 1em;
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-  }
-nav a{
-		align-self: center;
-		padding: 0.25em 0.5em;
-  }
-nav a:hover{
-    background: rgba(0, 0, 0, 0.5);
-    transition: 1s background;
+  font-family: 'Lato';
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  align-self: center;
+  transition: .25s background;
 }
-header{
-  height: 70vh;
+
+nav div {
+  margin-left: 1em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+nav div a {
+  align-self: center;
+  padding: 0.25em 0.5em;
+}
+nav div a:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transition: 1s background;
+}
+
+header {
+  height: 80vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -68,44 +120,53 @@ header{
   background: #191c1b;
   font-family: 'Lato', Arial;
 }
-header h1, header p{
+
+header h1, header p {
   color: white;
   animation: 1s slideIn;
 }
-header span{
+
+header span {
   color: #E91E63;
 }
-header img{
+
+header img {
   height: 100px;
   width: auto;
   animation: 1s fadeIn;
   animation-delay: .75s;
   animation-fill-mode: both;
 }
-button{
-  border-radius: 100px;
-  border: 0;
-  height: 70px;
-  width: 70px;
-  background:#E91E63;
-  transform: translateY(-35px);
-  transition: background 1s, transform 1s;
+
+#cardPage {
+  height: auto;
+  background: white;
 }
-button:hover{
-  background: #009688;
-  transition: background 1s, transform 1s;
+#cardPage #cardContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+#cardPage #card {
+  height: auto;
+  width: auto;
+  margin: 1em;
+  border-bottom: 10px solid #009688;
+  transition: .5s transform;
+}
+#cardPage #card:hover {
   cursor: pointer;
 }
-button:hover img{
-  transform: translateY(15px);
-  transition: background 1s, transform .5s;
+#cardPage #card:hover img {
+  opacity: 0.8;
 }
-button img{
-  height: 20px;
-  width: auto;
-  transform: translateY(3px);
+
+#pushUp {
+  background: white;
+  height: 50px;
 }
-.about{
+
+.about {
   margin: 0 auto;
   margin-bottom: 100px;
   flex-direction: column;
@@ -113,33 +174,151 @@ button img{
   width: 40%;
   font-family: 'Lato';
 }
-.about h2{
+.about h2 {
   text-decoration: underline;
   margin-bottom: 50px;
 }
-.about p{
+.about p {
   color: black;
 }
-article{
+
+article {
   height: auto;
   padding: 100px;
   background: #191c1b;
   font-family: 'Lato';
 }
-.cardContainer{
+
+#aboutPage {
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  background: #191c1b;
+}
+
+#aboutContainer {
+  display: flex;
+  align-items: center;
+}
+#aboutContainer img {
+  animation-name: imgSlideUp;
+  animation-duration: 1s;
+  height: 100px;
+  width: auto;
+}
+
+#aboutBox {
+  animation-name: pSlideDown;
+  animation-duration: 1s;
+  font-family: 'Lato';
+  width: 400px;
+  padding: 1em;
+  height: auto;
+  color: white;
+}
+#aboutBox span {
+  font-size: 20px;
+}
+
+#resumeContainer {
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#resumeContainer #resumeBox {
+  display: flex;
+  justify-content: center;
+  height: 1000px;
+  width: 400px;
+  background: #D81B60;
+  margin-left: 10px;
+}
+#resumeContainer #resumeBox img {
+  border-radius: 500px;
+  height: 200px;
+  width: auto;
+  margin-top: 50px;
+}
+#resumeContainer #resumeBox p {
+  color: white;
+}
+#resumeContainer #resumeBoxContain {
+  display: flex;
   flex-direction: row;
 }
-.card{
-  height: 200px;
-  margin: 1em;
-  width: 350px;
-  transition: .5s transform;
+#resumeContainer #resumeColumn {
+  display: flex;
+  flex-direction: column;
 }
-.card:hover{
-  transform: scale(1.1);
-  transition: .5s transform;
-  cursor: pointer;
+#resumeContainer #resumeBox2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  height: 280px;
+  width: 280px;
+  background: white;
+  margin: 10px;
+  font-family: 'Lato';
+}
+#resumeContainer #resumeBox2 p {
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+#portfolioTab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  height: 500px;
+  background: #191c1b;
+}
+#portfolioTab #portfolioContainer {
+  display: flex;
+  flex-direction: row;
+}
+#portfolioTab #portfolioContainer img {
+  animation-name: slideRight;
+  animation-duration: 1s;
+  height: 500px;
+  width: 500px;
+  margin-right: 50px;
+}
+#portfolioTab #portfolioContainer #imgText {
+  animation-name: slideLeft;
+  animation-duration: 1s;
+  font-family: 'Lato';
+  color: white;
+  height: 500px;
+  width: 500px;
+}
+
+.page-transition-enter {
+  transition: opacity .5s;
+  opacity: 0.9;
+}
+
+.page-transition-enter.page-transition-enter-active {
+  opacity: 1;
+}
+
+.page-transition-leave {
+  transition: opacity .5s;
+  opacity: 0.9;
+  position: absolute;
+}
+
+.page-transition-leave.page-transition-leave-active {
+  opacity: 1;
+}
+
+@media screen and (max-width: 1500px) {
+  #portfolioTab #portfolioContainer img {
+    height: 350px;
+    width: 350px;
+  }
 }
